@@ -25,20 +25,20 @@ def get_sheet():
         sheet = client.open("dados_danilo").sheet1
         # Garante que o cabeçalho está lá (opcional)
         if not sheet.row_values(1):
-            sheet.append_row(["nome", "email", "trabalho"])
+            sheet.append_row(["nome", "email", "trabalho_"])
         return sheet
     except Exception as e:
         st.error(f"Erro ao acessar a planilha: {e}")
         return None
 
-def add_contato(nome, email, trab):
+def add_contato(nome, email, trabalho_):
     sheet = get_sheet()
     if sheet:
         contatos = listar_contatos()
         for contato in contatos:
-            if contato.get("nome") == nome and contato.get("email") == email and contato.get("trab") == trab:
+            if contato.get("nome") == nome and contato.get("email") == email and contato.get("trabalho") == trabalho_:
                 return False  # Já existe
-        sheet.append_row([nome, email, trab])
+        sheet.append_row([nome, email, trabalho_])
         return True
     return False
 
