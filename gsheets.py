@@ -36,7 +36,7 @@ def add_contato(nome, email, trabalho_):
     if sheet:
         contatos = listar_contatos()
         for contato in contatos:
-            if contato.get("nome") == nome and contato.get("email") == email and contato.get("trabalho") == trabalho_:
+            if contato.get("nome") == nome and contato.get("email") == email and contato.get("trabalho_") == trabalho_:
                 return False  # Já existe
         sheet.append_row([nome, email, trabalho_])
         return True
