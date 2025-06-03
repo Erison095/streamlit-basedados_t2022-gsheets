@@ -22,7 +22,7 @@ def get_client():
 def get_sheet():
     try:
         client = get_client()
-        sheet = client.open("basecontatos").sheet1
+        sheet = client.open("dados_danilo").sheet1
         # Garante que o cabeçalho está lá (opcional)
         if not sheet.row_values(1):
             sheet.append_row(["nome", "email"])
