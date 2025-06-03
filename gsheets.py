@@ -25,7 +25,7 @@ def get_sheet():
         sheet = client.open("dados_danilo").sheet1
         # Garante que o cabeçalho está lá (opcional)
         if not sheet.row_values(1):
-            sheet.append_row(["nome", "email", "trab"])
+            sheet.append_row(["nome", "email", "trabalho"])
         return sheet
     except Exception as e:
         st.error(f"Erro ao acessar a planilha: {e}")
