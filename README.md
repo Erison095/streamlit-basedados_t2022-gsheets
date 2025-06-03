@@ -1,1 +1,0 @@
-# streamlit-basedados_t2022-gsheets
