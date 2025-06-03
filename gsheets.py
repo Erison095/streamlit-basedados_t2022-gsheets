@@ -31,7 +31,7 @@ def get_sheet():
         st.error(f"Erro ao acessar a planilha: {e}")
         return None
 
-def add_contato(nome, email, trabalho_):
+def add_contato(nome, email, trabalho):
     sheet = get_sheet()
     if sheet:
         contatos = listar_contatos()
