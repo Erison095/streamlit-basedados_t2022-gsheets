@@ -12,7 +12,7 @@ with st.form("form_contato"):
 
     if enviar:
         if nome and email:
-            sucesso = add_contato(nome, email)
+            sucesso = add_contato(nome, email, trab_p)
             if sucesso:
                 st.success("Contato salvo com sucesso!")
             else:
@@ -27,6 +27,7 @@ if dados:
     for contato in dados:
         nome = contato.get("nome", "Sem nome")
         email = contato.get("email", "Sem email")
+        trab_p = contato.get("trab_p", "Sem trabalho")
         st.write(f"**{nome}** - {email}")
 else:
     st.info("Nenhum contato cadastrado.")
