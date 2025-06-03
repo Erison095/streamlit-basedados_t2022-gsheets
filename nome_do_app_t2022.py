@@ -27,7 +27,7 @@ if dados:
     for contato in dados:
         nome = contato.get("nome", "Sem nome")
         email = contato.get("email", "Sem email")
-        trabalho_ = contato.get("trab", "Sem trabalho")
+        trabalho_ = contato.get("trabalho_", "Sem trabalho")
         st.write(f"**{nome}** - {email} - {trabalho_}")
 else:
     st.info("Nenhum contato cadastrado.")
