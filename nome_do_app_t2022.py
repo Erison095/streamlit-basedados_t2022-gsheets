@@ -2,7 +2,7 @@ import streamlit as st
 from gsheets import add_contato, listar_contatos
 
 st.set_page_config(page_title="Agenda", layout="centered")
-st.title("🏭 Programa mais emprego (Google Sheets)")
+st.title("🏭 Programa mais emprego")
 
 with st.form("form_contato"):
     nome = st.text_input("Nome")
