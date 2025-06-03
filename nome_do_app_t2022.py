@@ -8,7 +8,6 @@ with st.form("form_contato"):
     nome = st.text_input("Nome")
     email = st.text_input("Email")
     trab_p = st.text_input("Qual trabalho você está buscando ?")
-    email = st.text_input("Email")
     enviar = st.form_submit_button("Salvar")
 
     if enviar:
