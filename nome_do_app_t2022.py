@@ -12,7 +12,7 @@ with st.form("form_contato"):
     enviar = st.form_submit_button("Salvar")
 
     if enviar:
-        if nome and (email,trabalho,experiencia):
+        if nome and email and trabalho and experiencia:
             sucesso = add_contato(nome, email, trabalho, experiencia)
             if sucesso:
                 st.success("Contato salvo com sucesso!")
