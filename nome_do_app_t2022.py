@@ -7,12 +7,12 @@ st.title("📇 Exemplo de Agenda de Contatos (Google Sheets)")
 with st.form("form_contato"):
     nome = st.text_input("Nome")
     email = st.text_input("Email")
-    trabalho_ = st.text_input("Qual trabalho você procura ?")
+    trabalho = st.text_input("Qual trabalho você procura ?")
     enviar = st.form_submit_button("Salvar")
 
     if enviar:
-        if nome and email and trabalho_:
-            sucesso = add_contato(nome, email, trabalho_)
+        if nome and email and trabalho:
+            sucesso = add_contato(nome, email, trabalho)
             if sucesso:
                 st.success("Contato salvo com sucesso!")
             else:
@@ -27,7 +27,7 @@ if dados:
     for contato in dados:
         nome = contato.get("nome", "Sem nome")
         email = contato.get("email", "Sem email")
-        trabalho_ = contato.get("trabalho_", "Sem trabalho")
-        st.write(f"**{nome}** - {email} - {trabalho_}")
+        trabalho = contato.get("trabalho", "Sem trabalho")
+        st.write(f"**{nome}** - {email} - {trabalho}")
 else:
     st.info("Nenhum contato cadastrado.")
