@@ -8,11 +8,12 @@ with st.form("form_contato"):
     nome = st.text_input("Nome")
     email = st.text_input("Email")
     trabalho = st.text_input("Qual trabalho você procura ?")
+    experiencia = st.text_input("Conte um pouco de você e suas experiencias. (opcional)")
     enviar = st.form_submit_button("Salvar")
 
     if enviar:
-        if nome and email and trabalho:
-            sucesso = add_contato(nome, email, trabalho)
+        if nome and (email,trabalho,experiencia):
+            sucesso = add_contato(nome, email, trabalho, experiencia)
             if sucesso:
                 st.success("Contato salvo com sucesso!")
             else:
@@ -28,6 +29,7 @@ if dados:
         nome = contato.get("nome", "Sem nome")
         email = contato.get("email", "Sem email")
         trabalho = contato.get("trabalho", "Sem trabalho")
-        st.write(f"**{nome}** - {email} - {trabalho}")
+        experiencia = contato.get("experiencia", "Sem experiencia")
+        st.write(f"**{nome}** - {email} - {trabalho} - {experiencia}")
 else:
     st.info("Nenhum contato cadastrado.")
